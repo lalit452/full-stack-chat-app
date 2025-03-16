@@ -23,9 +23,7 @@ app.use(cookieParser());
 // }))
 
 app.use(cors({
-    origin: [process.env.FRONTEND_URL, "https://full-stack-chat-app-seven.vercel.app"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    allowedHeaders: ["Content-Type", "Authorization"],
+    origin: "https://full-stack-chat-app-seven.vercel.app",
     credentials: true
 }));
 
