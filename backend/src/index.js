@@ -25,6 +25,9 @@ app.use(cors({
 
 app.use("/api/auth", authRoutes);
 app.use("/api/messages", messageRoutes);
+app.get("/lalit",(req, res)=>{
+    res.send("Hello")
+})
 
 // app.listen(PORT, ()=>{             <------------- app ko server se replace kar de to use socket.io
 server.listen(PORT, ()=>{
