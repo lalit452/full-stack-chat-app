@@ -16,11 +16,19 @@ const PORT = process.env.PORT
 // this will allow you to extract json data out of body
 app.use(express.json()); 
 app.use(cookieParser());
-app.use(cors({ 
-    // origin: "http://localhost:5173", 
-    origin : process.env.FRONTEND_URL,
+// app.use(cors({ 
+//     // origin: "http://localhost:5173", 
+//     origin : process.env.FRONTEND_URL,
+//     credentials: true
+// }))
+
+app.use(cors({
+    origin: [process.env.FRONTEND_URL, "https://full-stack-chat-app-seven.vercel.app"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
     credentials: true
-}))
+}));
+
  
 
 app.use("/api/auth", authRoutes);
